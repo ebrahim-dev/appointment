@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\AppointmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,4 @@ Route::get('/delete_doctor/{id}', [AdminController::class,'delete_doctor']);
 Route::get('/edit_doctor/{id}', [AdminController::class,'edit_doctor']);
 Route::post('/update_doctor', [AdminController::class,'update_doctor']);
 Route::get('/sendemail', [EmailController::class,'sendWelcomeEmail'])->name('sendemail');
+Route::get('/check-availability', [AppointmentController::class, 'checkAvailability']);

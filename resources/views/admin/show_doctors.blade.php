@@ -39,6 +39,7 @@
                 <th style="padding: 10px; font-size:20px;"> Doctor Phone </th>
                 <th style="padding: 10px; font-size:20px;"> Speciality </th>
                 <th style="padding: 10px; font-size:20px;"> Room </th>
+                <th style="padding: 10px; font-size:20px;"> Duration (minutes)</th>
                 <th style="padding: 10px; font-size:20px;"> Image </th>
                 <th style="padding: 10px; font-size:20px;"> Delete </th>
                 <th style="padding: 10px; font-size:20px;"> Edit </th>
@@ -49,6 +50,7 @@
                     <td style="padding: 10px; font-size:20px;">{{ $doctors->phone}}</td>
                     <td style="padding: 10px; font-size:20px;">{{ $doctors->speciality }}</td>
                     <td style="padding: 10px; font-size:20px;">{{ $doctors->room }}</td>
+                    <td style="padding: 10px; font-size:20px;">{{ $doctors->appointment_duration }}</td>
                     <td style="padding: 10px; font-size:20px;"><img src="{{ asset('doctorimage/' . $doctors->image) }}" alt="" height="100" width="100"></td>
                     <td> <a class="bt btn-danger p-2 m-1" onclick="return confirm('Are you sure to delete it?')" href="{{ url('delete_doctor',$doctors->id) }}"> Delete </a></td>
                     <td> <a class="bt btn-primary p-2 m-1" onclick="return confirm('Are you sure to Edit it?')" href="{{ url('edit_doctor',$doctors->id) }}" > Edit </a></td>

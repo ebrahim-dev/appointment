@@ -11,7 +11,7 @@ class EmailController extends Controller
     public function sendWelcomeEmail(Request $request){
         $data = Session::get('appointment_data');
         $toEmail=$data['email'];
-        $message = $data['name']. "You are welcome";
+        $message = $data['name']. "Your appointment is on: ". $data['date'] . " at (GMT): ". $data['time'] . ", the situation of the appointment is: ". $data['status'] ;
         $subject= 'Appointment';
         $goal="The goal of the appointment: " . $data['doctor'];
         Mail::to($toEmail)->send(new WelcomeEmail($message, $subject, $goal));
